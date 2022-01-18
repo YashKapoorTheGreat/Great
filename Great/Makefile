@@ -14,7 +14,7 @@ $(OUT) : $(OBJS)
 
 $(OBJ)/%.o: $(SRC)/%.c
 	powershell mkdirIfNotExists "./$(@D)"
-	@$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS) $(OUT)

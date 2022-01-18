@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <defines.h>
 
 int main(int argc, char const *argv[])
 {
     printf("Hello World");
-    return 0;
+    return EXIT_SUCCESS;
 }
