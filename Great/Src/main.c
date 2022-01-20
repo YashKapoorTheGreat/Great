@@ -1,18 +1,16 @@
 #include <stdio.h>
-#include <memory\allocs.h>
 #include <defines.h>
-#include <datastructures\queueLL\queuell.h>
+#include <io\io.h>
 
 int main(int argc, char const *argv[])
 {
-    int *data1 = allocate(10 * sizeof(int));
-    int *data2 = allocate(10 * sizeof(int));
-    data2[5] = 5;
-    Queue *q = queue_create();
-    q->push(q, data1);
-    q->push(q, data2);
-    int *data11 = q->pop(q);
-    int *data22 = q->pop(q);
-    int *data3 = q->pop(q);
+    Queue *q = input_string_as_queue();
+    Node *c = q->frt;
+    while (c != NULL)
+    {
+        printf(c->data);
+        c = c->next;
+    }
+
     return EXIT_SUCCESS;
 }

@@ -6,11 +6,11 @@ Queue *queue_create()
     Queue *queue = allocate(sizeof(Queue));
     queue->frt = queue->rear = NULL;
     queue->len = 0;
-    queue->push = queue_push;
-    queue->pop = queue_pop;
+    queue->enqueue = queue_enqueue;
+    queue->dequeue = queue_dequeue;
 }
 
-void queue_push(Queue *this, void *data)
+void queue_enqueue(Queue *this, void *data)
 {
     this->len += 1;
     if (this->frt == NULL)
@@ -21,7 +21,7 @@ void queue_push(Queue *this, void *data)
     this->rear = node_add(data, this->rear);
 }
 
-void *queue_pop(Queue *this)
+void *queue_dequeue(Queue *this)
 {
     if (this->frt == NULL)
         return NULL;
