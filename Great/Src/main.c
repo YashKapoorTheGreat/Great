@@ -1,16 +1,12 @@
 #include <stdio.h>
 #include <defines.h>
 #include <io\io.h>
+#include <strings\string.h>
 
 int main(int argc, char const *argv[])
 {
-    Queue *q = input_string_as_queue();
-    Node *c = q->frt;
-    while (c != NULL)
-    {
-        printf(c->data);
-        c = c->next;
-    }
+    String q = input_string();
+    printf(q.str);
 
     return EXIT_SUCCESS;
 }

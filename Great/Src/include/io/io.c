@@ -1,6 +1,5 @@
 #include <defines.h>
 #include <io\io.h>
-#include <strings\string.h>
 #include <memory\allocs.h>
 
 Queue *input_string_as_queue()
@@ -32,4 +31,25 @@ Queue *input_string_as_queue()
         q->enqueue(q, data.str);
     }
     return q;
+}
+
+String input_string()
+{
+    Queue *q = input_string_as_queue();
+    String str = strl(((q->len - 1) * 23) + strlen(q->rear->data));
+    Node *c = q->frt;
+    int j = 0;
+    while (c != NULL)
+    {
+        char *data = ((char *)(c->data));
+        for (int i = 0; i < 23; i++)
+        {
+            if (data[i] == '\0')
+                break;
+            str.str[(j * 23) + i] = data[i];
+        }
+        c = c->next;
+        j++;
+    }
+    return str;
 }
