@@ -2,10 +2,10 @@ SRC   := ./Src
 OBJ	  := ./Objs
 BUILD := ./Build
 OUT	  := $(BUILD)/Great
-SRCS  := $(wildcard $(SRC)/**/*.c) $(wildcard $(SRC)/**/**/*.c) $(wildcard $(SRC)/*.c)
+SRCS  := $(wildcard $(SRC)/**/*.c) $(wildcard $(SRC)/**/**/*.c) $(wildcard $(SRC)/**/**/**/*.c) $(wildcard $(SRC)/*.c)
 OBJS  := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 CC	  := gcc
-FLAGS := -g -I$(SRC)/include -Wall
+FLAGS := -g -I$(SRC)/include
 
 all: $(OUT)
 
