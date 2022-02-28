@@ -1,16 +1,9 @@
 #ifndef QUEUELL_H
 #define QUEUELL_H
 
-#include <datastructures\queueLL\node.h>
+#include <datastructures/node/node.h>
 
-typedef struct queue
-{
-    Node *frt;
-    Node *rear;
-    int len;
-    void (*enqueue)(struct queue *this, void *data);
-    void *(*dequeue)(struct queue *this);
-} Queue;
+typedef struct Queue Queue;
 
 Queue *queue_create();
 void queue_enqueue(Queue *this, void *data);

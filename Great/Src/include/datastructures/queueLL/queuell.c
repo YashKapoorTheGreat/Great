@@ -1,13 +1,24 @@
-#include <datastructures\queueLL\queuell.h>
-#include <memory\allocs.h>
+#include <datastructures/queueLL/queuell.h>
+#include <memory/allocs.h>
+
+typedef struct Node
+{
+    void *data;
+    struct Node *next;
+} Node;
+
+typedef struct Queue
+{
+    Node *frt;
+    Node *rear;
+    int len;
+} Queue;
 
 Queue *queue_create()
 {
     Queue *queue = allocate(sizeof(Queue));
     queue->frt = queue->rear = NULL;
     queue->len = 0;
-    queue->enqueue = queue_enqueue;
-    queue->dequeue = queue_dequeue;
 }
 
 void queue_enqueue(Queue *this, void *data)

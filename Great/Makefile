@@ -1,7 +1,7 @@
 SRC   := ./Src
 OBJ	  := ./Objs
 BUILD := ./Build
-OUT	  := $(BUILD)/Great
+OUT	  := $(BUILD)/Great.exe
 SRCS  := $(wildcard $(SRC)/**/*.c) $(wildcard $(SRC)/**/**/*.c) $(wildcard $(SRC)/**/**/**/*.c) $(wildcard $(SRC)/*.c)
 OBJS  := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 CC	  := gcc
@@ -17,4 +17,7 @@ $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(OUT)
+	powershell rm -Recurse $(OBJ)
+	powershell rm -Recurse $(BUILD)
+	mkdir "$(OBJ)"
+	mkdir "$(BUILD)"

@@ -1,12 +1,27 @@
-// #include <datastructures/queue/queue.h>
+#include <datastructures/LL/ll.h>
 #include <memory/allocs.h>
+#include <stdio.h>
 
-void end();
+typedef struct Node
+{
+    void *data;
+    struct Node *next;
+} Node;
 
-// Queue queue;
+typedef struct Linkedlist
+{
+    Node *head;
+    Node *tail;
+    int len;
+} Linkedlist;
+
+Linkedlist *ll;
 
 void initAllocs()
 {
+    ll = malloc(sizeof(Linkedlist));
+    ll->head = ll->tail = NULL;
+    ll->len = 0;
 }
 
 void *allocate(size_t num_bytes)
@@ -15,19 +30,26 @@ void *allocate(size_t num_bytes)
     memset(allocatedMemoryPtr, 0, num_bytes);
     if (allocatedMemoryPtr == NULL)
     {
-        // TODO : RT Error Here
-        end();
+        printf("\nFailed to allocate!! Not enough memory.");
+        exit(-1);
     }
-    // TODO : free automatically
+    ll_push_back(ll, allocatedMemoryPtr);
     return allocatedMemoryPtr;
 }
 
 void deallocate(void *ptr)
 {
+    ll_remove(ll, ptr);
     free(ptr);
 }
 
 void closeAllocs()
 {
-    // q_clear(&queue);
+    Node *c = ll->head;
+    while (c != NULL)
+    {
+        Node *next = c->next;
+        free(node_delete(c));
+        c = next;
+    }
 }

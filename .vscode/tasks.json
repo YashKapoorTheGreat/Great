@@ -15,7 +15,38 @@
                 "kind": "build",
                 "isDefault": true
             },
+            "detail": "Build the Project.",
+            "dependsOn": [
+                "clean"
+            ]
+        },
+        {
+            "type": "cppbuild",
+            "label": "buildproj",
+            "command": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\make",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}\\Great"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "detail": "Build the Project."
+        },
+        {
+            "label": "clean",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\Great"
+            },
+            "detail": "Clean the object files."
         }
     ],
     "version": "2.0.0"
