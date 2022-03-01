@@ -2,7 +2,7 @@
 #define DEFINES_H
 
 // Config
-#define VERSION "1.0.0"
+#define VERSION "0.0.1"
 
 // Exit codes
 #define EXIT_ERROR 1

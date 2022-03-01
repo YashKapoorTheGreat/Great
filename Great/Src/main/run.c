@@ -3,9 +3,12 @@
 #include <defines.h>
 #include <io/io.h>
 #include <memory/allocs.h>
+
 #include "../error/error.h"
+
 #include "../tokenizer/tokenizer.h"
 #include "../parser/parser.h"
+#include "../visitor/visitor.h"
 
 typedef struct Node
 {
