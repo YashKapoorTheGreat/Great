@@ -30,6 +30,7 @@ Parser *parser_create(Queue *tokens)
     Parser *parser = allocate(sizeof(Parser));
     parser->codeToParse = tokens;
     parser_advance(parser);
+    return parser;
 }
 
 void parser_advance(Parser *this)

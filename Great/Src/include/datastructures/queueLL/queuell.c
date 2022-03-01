@@ -19,6 +19,7 @@ Queue *queue_create()
     Queue *queue = allocate(sizeof(Queue));
     queue->frt = queue->rear = NULL;
     queue->len = 0;
+    return queue;
 }
 
 void queue_enqueue(Queue *this, void *data)

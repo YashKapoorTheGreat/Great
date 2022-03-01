@@ -1,11 +1,11 @@
 SRC   := ./Src
-OBJ	  := ./Objs
+OBJ	  := ./BuildInt
 BUILD := ./Build
 OUT	  := $(BUILD)/Great.exe
 SRCS  := $(wildcard $(SRC)/**/*.c) $(wildcard $(SRC)/**/**/*.c) $(wildcard $(SRC)/**/**/**/*.c) $(wildcard $(SRC)/*.c)
 OBJS  := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 CC	  := gcc
-FLAGS := -g -I$(SRC)/include
+FLAGS := -g -I$(SRC)/include -Wall -Werror
 
 all: $(OUT)
 

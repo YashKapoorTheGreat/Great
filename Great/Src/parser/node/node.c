@@ -129,16 +129,21 @@ String *mono_operation_node_as_string(Node *node)
 
 String *node_as_string(Node *node)
 {
+    String *str;
     switch (node->type)
     {
     case TYPE_ErrorNode:
-        error_node_as_string(node);
+        str = error_node_as_string(node);
         break;
     case TYPE_NumberNode:
-        number_node_as_string(node);
+        str = number_node_as_string(node);
         break;
     case TYPE_BinaryOperationNode:
-        binary_operation_node_as_string(node);
+        str = binary_operation_node_as_string(node);
+        break;
+    case TYPE_MonoOperationNode:
+        str = mono_operation_node_as_string(node);
         break;
     }
+    return str;
 }

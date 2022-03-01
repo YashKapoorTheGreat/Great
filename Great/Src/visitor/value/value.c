@@ -3,6 +3,5 @@
 typedef struct Value
 {
     void *data;
-    VatueType type;
-
+    ValueType type;
 } Value;
