@@ -96,7 +96,7 @@
             "program": "/usr/bin/make",
             "args": [
                 "clean",
-                "-c",
+                "-C",
                 "${workspaceFolder}/Builder/Linux"
             ],
             "cwd": "${workspaceFolder}",
@@ -109,7 +109,7 @@
             "program": "/usr/bin/make",
             "args": [
                 "clean",
-                "-c",
+                "-C",
                 "${workspaceFolder}/Builder/Mac"
             ],
             "cwd": "${workspaceFolder}",

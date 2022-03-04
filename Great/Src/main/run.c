@@ -53,7 +53,7 @@ void runfromstring(String *code)
         if (str_equals(token->type, string("ERROR")))
         {
             Error *err = error_create(token->position, string("Illegal Character Error"), token->value);
-            printf(error_as_string(err)->str);
+            puts(error_as_string(err)->str);
             printf("\n");
             return;
         }
@@ -65,11 +65,11 @@ void runfromstring(String *code)
     ParseResult *parseResult = parser_parse(parser);
     if (parseResult->error != NULL)
     {
-        printf(node_as_string(parseResult->error)->str);
+        puts(node_as_string(parseResult->error)->str);
         printf("\n");
         return;
     }
-    printf(node_as_string(parseResult->result)->str);
+    puts(node_as_string(parseResult->result)->str);
     printf("\n");
 }
 

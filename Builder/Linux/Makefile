@@ -1,6 +1,6 @@
-SRC   := ./Great/Src
-OBJ	  := ./Great/BuildInt
-BUILD := ./Great/Build/Linux
+SRC   := ../../Great/Src
+OBJ	  := ../../Great/BuildInt
+BUILD := ../../Great/Build/Linux
 
 OUT	  := $(BUILD)/Great
 
@@ -21,5 +21,5 @@ $(OBJ)/%.o: $(SRC)/%.c
 clean:
 	rm -rf $(OBJ)
 	rm -rf $(BUILD)
-	mkdir "$(OBJ)"
-	mkdir "$(BUILD)"
+	mkdir -p "$(OBJ)"
+	mkdir -p "$(BUILD)"

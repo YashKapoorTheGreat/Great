@@ -1,6 +1,6 @@
-SRC   := ./Great/Src
-OBJ	  := ./Great/BuildInt
-BUILD := ./Great/Build/Mac
+SRC   := ../../Great/Src
+OBJ	  := ../../Great/BuildInt
+BUILD := ../../Great/Build/Mac
 
 OUT	  := $(BUILD)/Great.exe
 
@@ -21,5 +21,5 @@ $(OBJ)/%.o: $(SRC)/%.c
 clean:
 	rm -rf $(OBJ)
 	rm -rf $(BUILD)
-	mkdir "$(OBJ)"
-	mkdir "$(BUILD)"
+	mkdir -p "$(OBJ)"
+	mkdir -p "$(BUILD)"

@@ -53,7 +53,7 @@ String *to_string(int num)
         number /= 10;
     }
     String *str = string_from_len(len);
-    sprintf_s(str->str, len + 1, "%d", num);
+    sprintf(str->str, "%d", num);
     return str;
 }
 

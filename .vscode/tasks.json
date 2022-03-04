@@ -9,14 +9,14 @@
             "linux": {
                 "command": "/usr/bin/make",
                 "args": [
-                    "-c",
+                    "-C",
                     "${workspaceFolder}/Builder/Linux"
                 ],
             },
             "osx": {
                 "command": "/usr/bin/make",
                 "args": [
-                    "-c",
+                    "-C",
                     "${workspaceFolder}/Builder/Mac"
                 ],
             },
