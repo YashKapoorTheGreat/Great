@@ -5,68 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug without Build",
+            "name": "Debug (Windows)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\Great\\Build\\Great.exe",
+            "program": "${workspaceFolder}\\Great\\Build\\Windows\\Great.exe",
+            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gdb.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}\\Great",
-            "environment": [],
+            "cwd": "${workspaceFolder}",
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
-        },
-        {
-            "name": "Debug",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}\\Great\\Build\\Great.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}\\Great",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build"
-        },
-        {
-            "name": "Debug without clean",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}\\Great\\Build\\Great.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}\\Great",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -80,6 +28,92 @@
                 }
             ],
             "preLaunchTask": "buildproj"
+        },
+        {
+            "name": "Debug (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Great/Build/Linux/Great",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "buildproj"
+        },
+        {
+            "name": "Debug (Mac)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Great/Build/Mac/Great",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "buildproj"
+        },
+        {
+            "name": "Clean (Windows)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "",
+            "args": [],
+            "preLaunchTask": "clean",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+        },
+        {
+            "name": "Clean (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/bin/make",
+            "args": [
+                "clean",
+                "-c",
+                "${workspaceFolder}/Builder/Linux"
+            ],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+        },
+        {
+            "name": "Clean (Mac)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/bin/make",
+            "args": [
+                "clean",
+                "-c",
+                "${workspaceFolder}/Builder/Mac"
+            ],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
         }
     ]
 }

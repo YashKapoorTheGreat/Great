@@ -1,7 +1,9 @@
-SRC   := ./Src
-OBJ	  := ./BuildInt
-BUILD := ./Build
-OUT	  := $(BUILD)/Great.exe
+SRC   := ./Great/Src
+OBJ	  := ./Great/BuildInt
+BUILD := ./Great/Build/Linux
+
+OUT	  := $(BUILD)/Great
+
 SRCS  := $(wildcard $(SRC)/**/*.c) $(wildcard $(SRC)/**/**/*.c) $(wildcard $(SRC)/**/**/**/*.c) $(wildcard $(SRC)/*.c)
 OBJS  := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 CC	  := gcc
@@ -13,11 +15,11 @@ $(OUT) : $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $@
 
 $(OBJ)/%.o: $(SRC)/%.c
-	powershell mkdirIfNotExists "./$(@D)"
+	mkdir -p "./$(@D)"
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	powershell rm -Recurse $(OBJ)
-	powershell rm -Recurse $(BUILD)
+	rm -rf $(OBJ)
+	rm -rf $(BUILD)
 	mkdir "$(OBJ)"
 	mkdir "$(BUILD)"

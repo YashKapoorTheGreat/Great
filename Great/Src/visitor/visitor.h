@@ -2,8 +2,8 @@
 #define VISITOR_H
 
 #include "../parser/node/node.h"
-#include "value/value.h"
+#include "type/type.h"
 
-Value *visit(Node *node);
+Type *visit(Node *node);
 
 #endif

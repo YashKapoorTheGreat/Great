@@ -1,8 +1,8 @@
 #ifndef PARSERNODE_H
 #define PARSERNODE_H
 
-#include "..\tokenizer\token\token.h"
-#include "nodeType\nodeType.h"
+#include "../tokenizer/token/token.h"
+#include "nodeType/nodeType.h"
 #include <stdio.h>
 
 typedef struct Node Node;
