@@ -35,7 +35,17 @@
         {
             "label": "clean",
             "type": "shell",
-            "command": "${workspaceFolder}\\Builder\\Windows\\clean.bat",
+            "windows": {
+                "command": "${workspaceFolder}\\Builder\\Windows\\clean.bat",
+            },
+            "osx": {
+                "command": "/usr/bin/make",
+                "args": [
+                    "clean",
+                    "-C",
+                    "${workspaceFolder}/Builder/Mac"
+                ]
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true

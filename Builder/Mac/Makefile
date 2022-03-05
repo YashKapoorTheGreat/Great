@@ -2,7 +2,7 @@ SRC   := ../../Great/Src
 OBJ	  := ../../Great/BuildInt
 BUILD := ../../Great/Build/Mac
 
-OUT	  := $(BUILD)/Great.exe
+OUT	  := $(BUILD)/Great
 
 SRCS  := $(wildcard $(SRC)/**/*.c) $(wildcard $(SRC)/**/**/*.c) $(wildcard $(SRC)/**/**/**/*.c) $(wildcard $(SRC)/*.c)
 OBJS  := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))

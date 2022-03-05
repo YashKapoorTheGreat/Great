@@ -59,12 +59,11 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/Great/Build/Mac/Great",
-            "miDebuggerPath": "/usr/bin/gdb",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "externalConsole": true,
-            "MIMode": "gdb",
+            "MIMode": "lldb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -106,12 +105,9 @@
             "name": "Clean (Mac)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/usr/bin/make",
-            "args": [
-                "clean",
-                "-C",
-                "${workspaceFolder}/Builder/Mac"
-            ],
+            "program": "",
+            "args": [],
+            "preLaunchTask": "clean",
             "cwd": "${workspaceFolder}",
             "externalConsole": true,
         }
